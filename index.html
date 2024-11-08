@@ -2,91 +2,61 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=devicel-width, initial-scale=1.0" />
     <title>Alert Dialog</title>
-    <style>
-      body {
-        background-color: white;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        margin: 0;
-      }
-      .child {
-        background-color: white;
-        box-sizing: border-box;
-        border-radius: 5px;
-        padding: 20px;
-        width: 60%;
-        text-align: center;
-      }
-      .alert {
-        margin-top: 20px;
-        background-color: white;
-        padding: 20px;
-        border-radius: 5px;
-        border: 1px solid gray;
-        display: none;
-        text-align: left;
-      }
-      .alert h2 {
-        margin: 10px 0;
-      }
-      .alert p {
-        margin: 10px 0;
-      }
-      input[type="button"] {
-        margin: 10px;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 1em;
-      }
-      input[type="button"]:first-child {
-        background-color: #ccc;
-        color: #333;
-      }
-      input[type="button"]:last-child {
-        background-color: black;
-        color: white;
-      }
-    </style>
+    <link rel="stylesheet" href="/css/style.css" />
   </head>
   <body>
-    <div class="child">
-      <input type="button" value="Show dialog" class="show" />
-
-      <div class="alert">
-        <h2>Are you sure? Absolutely sure?</h2>
-        <p>This action may cause data loss.</p>
-        <input type="button" value="Cancel" class="cancel" />
-        <input type="button" value="Continue" class="Continue" />
+    <div class="container">
+      <div class="alert-dialog">
+        <div class="frame8-top">
+          <div class="frame8-middle">
+            <div class="frame8-bottom">
+              <h2>Alert Dialog</h2>
+              <p>
+                A modal dialog that interrupts the user with important content
+                and expects a response.
+              </p>
+            </div>
+            <div class="group6">
+              <button type="button" class="view">View docs</button>
+            </div>
+          </div>
+        </div>
+        <div class="alert-dialog-inner">
+          <div class="content">
+            <h2>Are you sure absolutely sure?</h2>
+            <p>
+              This action cannot be undone. This will permanently delete your
+              account and remove your data from our servers.
+            </p>
+          </div>
+          <br />
+          <div class="button-section">
+            <button type="button" class="button-cancel">Cancel</button>
+            <button type="button" class="button-continue first_continue">
+              Continue
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="overlay">
+      <div class="alert-dialog-inner warning">
+        <h2>Are you absolutely sure?</h2>
+        <p>
+          This action cannot be undone. This will permanently delete your
+          account and remove your data from our servers.
+        </p>
+        <div class="button-section">
+          <button type="button" class="button-cancel cancel">Cancel</button>
+          <button type="button" class="button-continue seconde_continue">
+            Continue
+          </button>
+        </div>
       </div>
     </div>
 
-    <script>
-      // Select elements
-      const showButton = document.querySelector(".show");
-      const alertDialog = document.querySelector(".alert");
-      const cancelButton = document.querySelector(".cancel");
-      const continuebtn = document.querySelector(".Continue");
-
-      showButton.addEventListener("click", () => {
-        alertDialog.style.display = "block";
-        showButton.style.display = "none";
-        button;
-      });
-
-      cancelButton.addEventListener("click", () => {
-        alertDialog.style.display = "none";
-        showButton.style.display = "inline-block";
-      });
-      continuebtn.addEventListener("click", () => {
-        alert("You deleted successfully.");
-        alertDialog.style.display = "none";
-        showButton.style.display = "inline-block";
-      });
-    </script>
+    <script src="js/index.js"></script>
   </body>
 </html>
